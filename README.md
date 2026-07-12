@@ -22,12 +22,3 @@
 ### Project Manager
 Code Generator, Generated files\
 ✅Generate peripheral initialization as a pair of '.c/.h' files per peripheral
-
-## プログラム概要
-### setup()
-Hello WorldとPCに送信
-### loop()
-now = HAL_GetTick()
-#### 0.1秒ごとに
-現在の経過時間をPCに送信\
-ボタンが押されていた場合，LEDの点灯/消灯を切り替える
