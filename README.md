@@ -69,3 +69,7 @@ $$
 #### NVIC Settings
 ✅ CAN1 TX interrupt
 ✅ CAN1 RX0 interrupt
+
+### USART2
+#### NVIC Settings
+USART2 global interrupt ✅
