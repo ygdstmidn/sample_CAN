@@ -7,12 +7,10 @@ extern "C"
 {
 #endif
 
-    // MARK:setup
     void user_setup(void)
     {
     }
 
-    // MARK:loop
     void user_loop(void)
     {
         const uint32_t now = HAL_GetTick();
