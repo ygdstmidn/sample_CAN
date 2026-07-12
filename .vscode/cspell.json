@@ -10,6 +10,8 @@
         "GPIOC",
         "huart",
         "NUCLEO",
+        "NVIC",
+        "Thrcot",
         "USART"
     ]
 }
