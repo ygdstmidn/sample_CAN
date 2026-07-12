@@ -22,6 +22,7 @@ extern "C"
         printf(__DATE__ "\r\n");
         printf(__TIME__ "\r\n");
 
+        setbuf(stdout, NULL);
         pc.begin();
 
         led.write(0);
@@ -35,20 +36,10 @@ extern "C"
 
         if (now - pre >= 10)
         {
-            static int count = 0;
-            count++;
-            if (count >= 100)
-            {
-                led.toggle();
-                printf(">now:%lu\r\n", now);
-                count = 0;
-            }
-
             while (pc.available() > 0)
             {
-                uint8_t data = static_cast<uint8_t>(pc.read());
+                const uint8_t data = static_cast<uint8_t>(pc.read());
                 putchar(data);
-                fflush(NULL);
             }
 
             pc.periodic();
