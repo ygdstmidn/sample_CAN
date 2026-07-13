@@ -41,7 +41,6 @@ extern "C"
             can.configFilter(&filter);
         }
         can.begin();
-        can.activateNotification(CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY);
 
         led.write(0);
         setupDone = true;
@@ -79,6 +78,8 @@ extern "C"
 
             pre = now;
         }
+        can.TxCplt(&hcan1);
+        can.RxCplt(&hcan1, CAN_RX_FIFO0);
     }
 
     int _write(int file, char* ptr, int len)
@@ -103,26 +104,6 @@ extern "C"
     void HAL_UART_TxCpltCallback(UART_HandleTypeDef* huart)
     {
         pc.TxCplt(huart);
-    }
-
-    void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef* hcan)
-    {
-        can.RxCplt(hcan, CAN_RX_FIFO0);
-    }
-
-    void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef* hcan)
-    {
-        can.TxCplt(hcan);
-    }
-
-    void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef* hcan)
-    {
-        can.TxCplt(hcan);
-    }
-
-    void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef* hcan)
-    {
-        can.TxCplt(hcan);
     }
 
 #ifdef __cplusplus

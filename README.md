@@ -68,9 +68,6 @@ $$
 - [CAN Bit Time Calculation](http://www.bittiming.can-wiki.info/)
 - [STM32F446_CAN/bitrate.c neo-Thrcot - GitHub](https://github.com/neo-Thrcot/STM32F446_CAN/blob/main/bitrate.c)
 - [過去の議論 - esa](https://gifukosen-robot.esa.io/posts/367#%E5%88%B6%E5%BE%A1%E7%8F%AD%E3%81%A7%E8%A9%B1%E3%81%97%E5%90%88%E3%81%84%E3%81%99%E3%82%8B)
-#### NVIC Settings
-✅ CAN1 TX interrupt
-✅ CAN1 RX0 interrupt
 
 ### USART2
 #### NVIC Settings
