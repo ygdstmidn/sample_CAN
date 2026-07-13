@@ -8,7 +8,7 @@
 
 ukaikokko::InterruptBufferedUART<256, 1024, 1024> pc(&huart2);
 ukaikokko::GPOutput led(DebugLED_GPIO_Port, DebugLED_Pin);
-ukaikokko::CAN<256, 1024, 1024> can(&hcan1);
+ukaikokko::BufferedCAN<256, 1024, 1024> can(&hcan1);
 
 static bool setupDone = false;
 
@@ -65,15 +65,12 @@ extern "C"
                 can.write(&msg);
             }
 
-            while (can.available() > 0)
+            ukaikokko::CANMessage msg;
+            while (can.read(&msg))
             {
-                ukaikokko::CANMessage msg;
-                if (can.read(&msg))
+                if (msg.ide == CAN_ID_STD && msg.id == 0x124 && msg.dlc == 1)
                 {
-                    if (msg.ide == CAN_ID_STD && msg.id == 0x124 && msg.dlc == 1)
-                    {
-                        putchar(msg.data[0]);
-                    }
+                    putchar(msg.data[0]);
                 }
             }
 

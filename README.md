@@ -75,3 +75,8 @@ $$
 ### USART2
 #### NVIC Settings
 USART2 global interrupt ✅
+### memo
+538文字
+```
+This is a test no meaningful content.Please paste me to your serial monitor to check if the serial communication is working properly.Check that this message is printed correctly and that the characters are not garbled.SUCCESS!!Congratulations! You have successfully set up the serial communication using InterruptBufferedUART.I like curry and rice. I also like pizza and pasta. I enjoy programming and learning new things. I hope you enjoy using this library and find it useful for your projects.Thank you for using InterruptBufferedUART!
+```
